@@ -4,9 +4,13 @@
 
 > A framework for orchestrating multiple specialized AI agents using the GitHub Copilot SDK -- enabling parallel development, automated testing, and intelligent task decomposition through coordinated agent sessions.
 
+## 📋 Quick Summary
+
+> 🤖 **多智能代理協作框架，讓 AI 團隊像真人團隊一樣分工合作！** 本專案基於 GitHub Copilot SDK 建構完整的多代理協調系統，定義了四種專業角色：🎯 Supervisor（監督者）負責任務分解與進度追蹤、💻 Developer（開發者）負責功能實作與程式碼撰寫、🧪 Tester（測試者）執行自動化測試與錯誤發現、📝 Reporter（報告者）進行結果分析與文件生成。🔄 支援多種工作流程模式——循序執行、平行開發、行銷智慧分析、測試自動化，每種模式都有完整的範例程式碼。🐍 同時提供 TypeScript 與 Python（MarketSense 引擎）雙語言實作。🔥 核心亮點是事件驅動的多 Session 架構，每個代理在獨立 Session 中運行，透過 Firebase Firestore 進行任務佇列管理。📦 內含 16KB 的完整代理定義文件、11KB 的 SDK 使用指南、13KB 的技能配置檔，是學習與部署多代理 AI 系統的絕佳起點。
+
 ---
 
-## Why This Exists
+## 🤔 Why This Exists
 
 A single AI agent hits a ceiling quickly on complex software projects. It cannot simultaneously architect, implement, test, and document. It loses context across large codebases. It cannot parallelize.
 
@@ -16,7 +20,7 @@ The framework includes ready-to-use agent definitions, skill configurations, orc
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ```
                     Copilot Client
@@ -59,7 +63,7 @@ The framework supports multiple workflow patterns:
 
 ---
 
-## Key Files
+## 📂 Key Files
 
 | File | Size | Purpose |
 |------|------|---------|
@@ -71,7 +75,7 @@ The framework supports multiple workflow patterns:
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -84,7 +88,7 @@ The framework supports multiple workflow patterns:
 
 ---
 
-## Quick Start
+## 🏁 Quick Start
 
 ### TypeScript (Primary)
 
@@ -117,7 +121,7 @@ python -m marketsense.run_pipeline
 
 ---
 
-## Session Management Example
+## 💡 Session Management Example
 
 ```typescript
 // Each agent runs in an isolated session
@@ -140,12 +144,12 @@ await Promise.all([
 
 ---
 
-## Author
+## 👤 Author
 
 **Huang Akai (Kai)** -- Founder @ Universal FAW Labs | Creative Technologist | Ex-Ogilvy | 15+ years experience
 
 ---
 
-## License
+## 📄 License
 
 MIT
