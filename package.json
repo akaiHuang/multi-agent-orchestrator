@@ -1,0 +1,43 @@
+{
+  "name": "copilot-multi-agent-system",
+  "version": "1.0.0",
+  "description": "AI驅動的多代理協作開發系統 - 使用 GitHub Copilot SDK",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsx examples/multi-agent-workflow.ts",
+    "parallel": "tsx examples/parallel-development.ts",
+    "test:auto": "tsx examples/nextjs-test-automation.ts",
+    "marketing:intel": "tsx examples/marketing-intel-orchestrator.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\""
+  },
+  "keywords": [
+    "copilot",
+    "ai",
+    "multi-agent",
+    "automation",
+    "development",
+    "testing",
+    "orchestration"
+  ],
+  "author": "AI Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "@github/copilot-sdk": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "prettier": "^3.1.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

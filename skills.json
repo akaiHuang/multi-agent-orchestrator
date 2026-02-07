@@ -1,0 +1,442 @@
+{
+  "skills": [
+    {
+      "name": "multi-agent-orchestration",
+      "displayName": "多代理協調",
+      "version": "1.0.0",
+      "description": "協調多個 AI 代理完成複雜的軟體開發任務",
+      "category": "development",
+      "tags": ["multi-agent", "orchestration", "task-management", "coordination"],
+      "capabilities": [
+        "任務分解和分配",
+        "並行任務執行",
+        "進度追蹤",
+        "結果整合",
+        "錯誤處理和重試"
+      ],
+      "agents": [
+        {
+          "role": "supervisor",
+          "name": "專案監工",
+          "responsibilities": [
+            "分析專案需求",
+            "分解大型任務為小任務",
+            "分配任務給適當的代理",
+            "追蹤整體進度",
+            "協調團隊成員"
+          ],
+          "tools": ["view", "search"],
+          "prompt": "你是一位經驗豐富的專案經理,負責任務分解、分配和進度追蹤。請以結構化的方式組織工作,確保專案順利進行。"
+        },
+        {
+          "role": "developer",
+          "name": "開發工程師",
+          "responsibilities": [
+            "實現功能需求",
+            "編寫高質量代碼",
+            "遵循最佳實踐",
+            "撰寫技術文檔",
+            "代碼重構"
+          ],
+          "tools": ["edit", "view", "bash", "search"],
+          "prompt": "你是一位資深全端工程師,專精於編寫乾淨、可維護的代碼,遵循最佳實踐和設計模式。"
+        },
+        {
+          "role": "tester",
+          "name": "測試工程師",
+          "responsibilities": [
+            "編寫單元測試",
+            "編寫整合測試",
+            "執行 E2E 測試",
+            "發現和報告 bug",
+            "確保代碼覆蓋率"
+          ],
+          "tools": ["edit", "view", "bash", "search"],
+          "prompt": "你是一位測試工程師,專精於編寫全面的自動化測試,確保軟體質量。"
+        }
+      ],
+      "workflow": {
+        "steps": [
+          {
+            "id": 1,
+            "name": "需求分析",
+            "agent": "supervisor",
+            "action": "分析需求並分解任務"
+          },
+          {
+            "id": 2,
+            "name": "並行開發",
+            "agent": "developer",
+            "action": "執行開發任務",
+            "parallel": true
+          },
+          {
+            "id": 3,
+            "name": "測試驗證",
+            "agent": "tester",
+            "action": "執行自動化測試"
+          },
+          {
+            "id": 4,
+            "name": "結果審查",
+            "agent": "supervisor",
+            "action": "檢查完成狀態並生成報告"
+          }
+        ]
+      },
+      "configuration": {
+        "maxParallelTasks": 5,
+        "taskTimeout": 300000,
+        "retryAttempts": 3,
+        "enableLogging": true
+      },
+      "examples": [
+        {
+          "name": "Web 應用開發",
+          "description": "使用多代理協調開發完整的 Web 應用",
+          "path": "examples/multi-agent-workflow.ts"
+        }
+      ]
+    },
+    {
+      "name": "parallel-development",
+      "displayName": "並行開發",
+      "version": "1.0.0",
+      "description": "同時執行多個獨立的開發任務,提升開發效率",
+      "category": "development",
+      "tags": ["parallel", "concurrent", "performance", "efficiency"],
+      "capabilities": [
+        "並行任務執行",
+        "專門化代理",
+        "任務隊列管理",
+        "結果聚合",
+        "進度監控"
+      ],
+      "agents": [
+        {
+          "role": "frontend-developer",
+          "name": "前端開發者",
+          "responsibilities": [
+            "React/Next.js 開發",
+            "UI/UX 實現",
+            "前端性能優化",
+            "響應式設計"
+          ],
+          "tools": ["edit", "view", "bash"],
+          "prompt": "你是一位前端開發專家,專精於 React 和 Next.js 開發。"
+        },
+        {
+          "role": "backend-developer",
+          "name": "後端開發者",
+          "responsibilities": [
+            "API 設計和實現",
+            "資料庫設計",
+            "後端邏輯",
+            "安全性實現"
+          ],
+          "tools": ["edit", "view", "bash"],
+          "prompt": "你是一位後端開發專家,專精於 Node.js API 開發和資料庫設計。"
+        },
+        {
+          "role": "database-specialist",
+          "name": "資料庫專家",
+          "responsibilities": [
+            "資料庫架構設計",
+            "SQL 優化",
+            "資料遷移",
+            "索引策略"
+          ],
+          "tools": ["edit", "view", "bash"],
+          "prompt": "你是一位資料庫專家,專精於資料庫設計和優化。"
+        },
+        {
+          "role": "test-engineer",
+          "name": "測試工程師",
+          "responsibilities": [
+            "自動化測試",
+            "測試覆蓋率",
+            "性能測試",
+            "安全測試"
+          ],
+          "tools": ["edit", "view", "bash"],
+          "prompt": "你是一位測試工程師,專精於自動化測試。"
+        }
+      ],
+      "workflow": {
+        "type": "parallel",
+        "steps": [
+          {
+            "id": 1,
+            "name": "任務分配",
+            "action": "將任務分配給不同專業的代理"
+          },
+          {
+            "id": 2,
+            "name": "並行執行",
+            "action": "所有代理同時執行各自的任務",
+            "parallel": true
+          },
+          {
+            "id": 3,
+            "name": "結果整合",
+            "action": "整合所有代理的工作成果"
+          }
+        ]
+      },
+      "configuration": {
+        "maxConcurrentSessions": 4,
+        "sessionTimeout": 600000,
+        "enableProgressTracking": true
+      },
+      "examples": [
+        {
+          "name": "並行開發示範",
+          "description": "展示如何並行開發前端、後端、資料庫和測試",
+          "path": "examples/parallel-development.ts"
+        }
+      ]
+    },
+    {
+      "name": "automated-testing",
+      "displayName": "自動化測試",
+      "version": "1.0.0",
+      "description": "完整的自動化測試流程,包含測試生成、執行、修復和報告",
+      "category": "testing",
+      "tags": ["testing", "automation", "quality-assurance", "ci-cd"],
+      "capabilities": [
+        "自動生成測試",
+        "執行測試套件",
+        "分析測試結果",
+        "修復失敗測試",
+        "生成測試報告",
+        "代碼覆蓋率分析"
+      ],
+      "agents": [
+        {
+          "role": "test-generator",
+          "name": "測試生成專家",
+          "responsibilities": [
+            "生成單元測試",
+            "生成整合測試",
+            "生成 E2E 測試",
+            "確保測試覆蓋率"
+          ],
+          "tools": ["edit", "view", "bash", "search"],
+          "prompt": "你是一位測試工程師,專精於生成高質量的自動化測試。"
+        },
+        {
+          "role": "test-runner",
+          "name": "測試執行專家",
+          "responsibilities": [
+            "執行測試套件",
+            "分析測試結果",
+            "識別失敗原因",
+            "提供修復建議"
+          ],
+          "tools": ["bash", "view", "search"],
+          "prompt": "你是一位測試執行專家,負責執行測試並分析結果。"
+        },
+        {
+          "role": "test-fixer",
+          "name": "測試修復專家",
+          "responsibilities": [
+            "分析失敗測試",
+            "修復測試代碼",
+            "修復被測試代碼",
+            "驗證修復"
+          ],
+          "tools": ["edit", "view", "bash", "search"],
+          "prompt": "你是一位測試修復專家,專門分析和修復失敗的測試。"
+        }
+      ],
+      "workflow": {
+        "steps": [
+          {
+            "id": 1,
+            "name": "生成測試",
+            "agent": "test-generator",
+            "action": "為指定組件生成測試代碼"
+          },
+          {
+            "id": 2,
+            "name": "執行測試",
+            "agent": "test-runner",
+            "action": "執行測試套件並收集結果"
+          },
+          {
+            "id": 3,
+            "name": "修復測試",
+            "agent": "test-fixer",
+            "action": "修復失敗的測試",
+            "condition": "有失敗的測試"
+          },
+          {
+            "id": 4,
+            "name": "重新測試",
+            "agent": "test-runner",
+            "action": "重新執行測試驗證修復",
+            "condition": "執行了修復"
+          },
+          {
+            "id": 5,
+            "name": "生成報告",
+            "agent": "test-runner",
+            "action": "生成詳細的測試報告"
+          }
+        ]
+      },
+      "configuration": {
+        "testFramework": "jest",
+        "coverageThreshold": 80,
+        "maxRetries": 3,
+        "reportFormat": "markdown"
+      },
+      "examples": [
+        {
+          "name": "Next.js 測試自動化",
+          "description": "完整的 Next.js 應用測試流程",
+          "path": "examples/nextjs-test-automation.ts"
+        }
+      ]
+    },
+    {
+      "name": "code-review",
+      "displayName": "代碼審查",
+      "version": "1.0.0",
+      "description": "自動化代碼審查,發現潛在問題並提供改進建議",
+      "category": "quality-assurance",
+      "tags": ["code-review", "quality", "best-practices", "security"],
+      "capabilities": [
+        "代碼質量分析",
+        "安全性檢查",
+        "性能分析",
+        "最佳實踐檢查",
+        "重構建議"
+      ],
+      "agents": [
+        {
+          "role": "code-reviewer",
+          "name": "代碼審查專家",
+          "responsibilities": [
+            "分析代碼質量",
+            "識別潛在問題",
+            "提供改進建議",
+            "檢查最佳實踐"
+          ],
+          "tools": ["view", "search"],
+          "prompt": "你是一位資深代碼審查專家,專精於識別代碼質量問題並提供建設性建議。"
+        }
+      ],
+      "workflow": {
+        "steps": [
+          {
+            "id": 1,
+            "name": "代碼分析",
+            "action": "分析代碼結構和質量"
+          },
+          {
+            "id": 2,
+            "name": "問題識別",
+            "action": "識別潛在問題和改進點"
+          },
+          {
+            "id": 3,
+            "name": "生成報告",
+            "action": "生成詳細的審查報告"
+          }
+        ]
+      },
+      "configuration": {
+        "checkSecurity": true,
+        "checkPerformance": true,
+        "checkBestPractices": true,
+        "severityThreshold": "medium"
+      }
+    },
+    {
+      "name": "documentation-generator",
+      "displayName": "文檔生成",
+      "version": "1.0.0",
+      "description": "自動生成高質量的技術文檔",
+      "category": "documentation",
+      "tags": ["documentation", "api-docs", "readme", "technical-writing"],
+      "capabilities": [
+        "API 文檔生成",
+        "README 生成",
+        "代碼註釋生成",
+        "使用範例生成",
+        "架構圖生成"
+      ],
+      "agents": [
+        {
+          "role": "doc-writer",
+          "name": "文檔撰寫專家",
+          "responsibilities": [
+            "撰寫清晰的文檔",
+            "生成代碼範例",
+            "創建教程",
+            "更新文檔"
+          ],
+          "tools": ["edit", "view", "search"],
+          "prompt": "你是一位技術文檔撰寫專家,專精於撰寫清晰、準確、易懂的技術文檔。"
+        }
+      ],
+      "workflow": {
+        "steps": [
+          {
+            "id": 1,
+            "name": "分析代碼",
+            "action": "分析代碼結構和功能"
+          },
+          {
+            "id": 2,
+            "name": "生成文檔",
+            "action": "生成詳細的文檔"
+          },
+          {
+            "id": 3,
+            "name": "添加範例",
+            "action": "添加使用範例和教程"
+          }
+        ]
+      },
+      "configuration": {
+        "format": "markdown",
+        "includeExamples": true,
+        "includeApiDocs": true,
+        "language": "zh-TW"
+      }
+    }
+  ],
+  "skillSets": [
+    {
+      "name": "full-stack-development",
+      "displayName": "全端開發技能組",
+      "description": "包含前端、後端、資料庫和測試的完整技能組",
+      "skills": [
+        "parallel-development",
+        "automated-testing",
+        "code-review",
+        "documentation-generator"
+      ]
+    },
+    {
+      "name": "quality-assurance",
+      "displayName": "質量保證技能組",
+      "description": "專注於測試和代碼質量的技能組",
+      "skills": [
+        "automated-testing",
+        "code-review"
+      ]
+    },
+    {
+      "name": "project-management",
+      "displayName": "專案管理技能組",
+      "description": "專注於任務協調和專案管理的技能組",
+      "skills": [
+        "multi-agent-orchestration",
+        "documentation-generator"
+      ]
+    }
+  ]
+}
