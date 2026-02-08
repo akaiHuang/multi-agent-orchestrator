@@ -4,6 +4,10 @@
 
 > A framework for orchestrating multiple specialized AI agents using the GitHub Copilot SDK -- enabling parallel development, automated testing, and intelligent task decomposition through coordinated agent sessions.
 
+## About
+
+Multi-Agent Orchestrator 是一個多智能代理協作框架，基於 GitHub Copilot SDK 定義角色分工與任務協調機制。適合用於建立可並行工作的 Agent 團隊（規劃、開發、測試、報告），加速大型任務的自動化交付流程。
+
 ## 📋 Quick Summary
 
 > 🤖 **多智能代理協作框架，讓 AI 團隊像真人團隊一樣分工合作！** 本專案基於 GitHub Copilot SDK 建構完整的多代理協調系統，定義了四種專業角色：🎯 Supervisor（監督者）負責任務分解與進度追蹤、💻 Developer（開發者）負責功能實作與程式碼撰寫、🧪 Tester（測試者）執行自動化測試與錯誤發現、📝 Reporter（報告者）進行結果分析與文件生成。🔄 支援多種工作流程模式——循序執行、平行開發、行銷智慧分析、測試自動化，每種模式都有完整的範例程式碼。🐍 同時提供 TypeScript 與 Python（MarketSense 引擎）雙語言實作。🔥 核心亮點是事件驅動的多 Session 架構，每個代理在獨立 Session 中運行，透過 Firebase Firestore 進行任務佇列管理。📦 內含 16KB 的完整代理定義文件、11KB 的 SDK 使用指南、13KB 的技能配置檔，是學習與部署多代理 AI 系統的絕佳起點。
